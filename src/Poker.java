@@ -1,4 +1,6 @@
+
 import java.util.*;
+import java.util.regex.*;
 
 /**
  * Created by jiangyiming on 5/7/16.
@@ -39,22 +41,25 @@ public class Poker {
      */
     public Player createPlayer() {
         int id;
+        String sId;
         String name;
         Scanner console = new Scanner(System.in);
-        System.out.println("请输入ID:");
+        Pattern pattern = Pattern.compile("[0-9]*");
         while (true) {
-            try {
-                id = Integer.valueOf(console.next());
+            System.out.println("请输入ID:");
+            sId = console.next();
+            Matcher matcher = pattern.matcher(sId);
+            if (matcher.matches()) {
+                id = Integer.parseInt(sId);
                 if (!ids.contains(id)) {
                     ids.add(id);
                     break;
                 } else {
                     System.out.println("ID已经注册过,请重新输入一个ID:");
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("输入的ID不是整数,请重新输入ID");
+            } else {
+                System.out.println("输入的ID不是正整数,请重新输入ID");
             }
-
         }
         System.out.println("请输入姓名:");
         name = console.next();

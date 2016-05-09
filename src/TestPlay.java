@@ -44,8 +44,6 @@ public class TestPlay {
         Player winP = poker.compare(p1, p2);
         if (winP != null) {
             System.out.println("-----玩家:" + winP.getName() + "获胜!-----");
-        } else {
-            System.out.println("诶嘿!!这局平了");
         }
         System.out.println("玩家各自的手牌为:");
         poker.showCards(p1);
