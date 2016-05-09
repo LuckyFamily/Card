@@ -17,7 +17,7 @@ public class Poker {
      */
     public List<Card> createPoker() {
         List<Card> pokers = new ArrayList<>();
-        for (int i = 0; i <= 13; i++) {
+        for (int i = 0; i < 13; i++) {
             pokers.add(new Card("黑桃", i));
             pokers.add(new Card("红桃", i));
             pokers.add(new Card("方片", i));
