@@ -5,7 +5,9 @@
 public class Card implements Comparable<Card> {
     private String prefix;
     private int id;
-
+    public enum Id{
+        J,Q,K,A
+    }
     public Card(String prefix, int id) {
         this.prefix = prefix;
         this.id = id;
@@ -29,10 +31,10 @@ public class Card implements Comparable<Card> {
 
     public String show(String prefix, int id) {
         switch (id){
-            case 10:return prefix+"J";
-            case 11:return prefix+"Q";
-            case 12:return prefix+"K";
-            case 13:return prefix+"A";
+            case 10:return prefix+Id.J;
+            case 11:return prefix+Id.Q;
+            case 12:return prefix+Id.K;
+            case 13:return prefix+Id.A;
             default:return prefix+id;
         }
     }
