@@ -34,6 +34,7 @@ public class Poker {
         Collections.shuffle(pokers);
     }
 
+    private static final String USER_ID_REGEX = "[0-9]+";
     /**
      * 创建玩家 play play play~~
      *
@@ -44,7 +45,7 @@ public class Poker {
         String sId;
         String name;
         Scanner console = new Scanner(System.in);
-        Pattern pattern = Pattern.compile("[0-9]*");
+        Pattern pattern = Pattern.compile(USER_ID_REGEX); //[0-9]* would accept empty string
         while (true) {
             System.out.println("请输入ID:");
             sId = console.next();
