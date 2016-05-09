@@ -29,10 +29,10 @@ public class Card implements Comparable<Card> {
 
     public String show(String prefix, int id) {
         switch (id){
-            case 11:return prefix+"J";
-            case 12:return prefix+"Q";
-            case 13:return prefix+"K";
-            case 14:return prefix+"A";
+            case 10:return prefix+"J";
+            case 11:return prefix+"Q";
+            case 12:return prefix+"K";
+            case 13:return prefix+"A";
             default:return prefix+id;
         }
     }

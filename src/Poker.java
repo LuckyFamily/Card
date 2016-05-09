@@ -8,6 +8,7 @@ import java.util.regex.*;
 public class Poker {
     private Set<Integer> index = new HashSet<>();
     private Set<Integer> ids = new HashSet<>();
+    private static final String USER_ID_REGEX = "[0-9]+";
 
     /**
      * 锵锵``创建扑克牌O(∩_∩)O~
@@ -16,7 +17,7 @@ public class Poker {
      */
     public List<Card> createPoker() {
         List<Card> pokers = new ArrayList<>();
-        for (int i = 2; i <= 14; i++) {
+        for (int i = 0; i <= 13; i++) {
             pokers.add(new Card("黑桃", i));
             pokers.add(new Card("红桃", i));
             pokers.add(new Card("方片", i));
@@ -34,7 +35,6 @@ public class Poker {
         Collections.shuffle(pokers);
     }
 
-    private static final String USER_ID_REGEX = "[0-9]+";
     /**
      * 创建玩家 play play play~~
      *
